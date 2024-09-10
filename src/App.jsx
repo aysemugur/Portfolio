@@ -14,13 +14,11 @@ function App() {
   return (
     <div className={`App ${isDarkMode ? "dark" : "light"}`}>
       <Header toggleLanguage={toggleLanguage} toggleTheme={toggleTheme} />
-      <main className="body ">
-        <Hero />
-        <Skills />
-        <Profile />
-        <Projects />
-        <Contact />
-      </main>
+      <Hero />
+      <Skills />
+      <Profile />
+      <Projects />
+      <Contact />
     </div>
   );
 }

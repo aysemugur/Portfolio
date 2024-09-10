@@ -26,12 +26,12 @@ function Header() {
 
   return (
     <header
-      className={`flex flex-row sticky top-0 w-150 h-150  ${
+      className={`flex flex-row sticky top-10 h-70 justify-between mx-auto  w-[960px]  ${
         isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
     >
       <h2>almila</h2>
-      <div className="flex flex-row items-center w-40 h-6 bg-indigo-500 space-x-2">
+      <div className="flex flex-row h-8 bg-indigo-500 gap-x-12">
         <a
           onClick={toggleLanguage}
           className="px-2 py-1 rounded bg-blue-500 text-white"
