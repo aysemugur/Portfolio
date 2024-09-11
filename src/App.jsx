@@ -1,5 +1,6 @@
-import { useLanguage } from "./contexts/LanguageContext";
-import { useTheme } from "./contexts/ThemeContext";
+import React from "react";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -8,18 +9,19 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 function App() {
-  const { language, toggleLanguage } = useLanguage();
-  const { isDarkMode, toggleTheme } = useTheme();
-
   return (
-    <div className={`App ${isDarkMode ? "dark" : "light"}`}>
-      <Header toggleLanguage={toggleLanguage} toggleTheme={toggleTheme} />
-      <Hero />
-      <Skills />
-      <Profile />
-      <Projects />
-      <Contact />
-    </div>
+    <LanguageProvider>
+      <ThemeProvider>
+        <div className="App">
+          <Header />
+          <Hero />
+          <Skills />
+          <Profile />
+          <Projects />
+          <Contact />
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 

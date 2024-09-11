@@ -1,54 +1,28 @@
-import { useLanguage } from "../contexts/LanguageContext";
-import { useTheme } from "../contexts/ThemeContext";
+import React, { useContext } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 
-function Header() {
-  const { language, toggleLanguage } = useLanguage();
-  const { isDarkMode, toggleTheme } = useTheme();
-
-  const content = {
-    tr: {
-      almila: "almila",
-      skills: "Yetenekler",
-      projects: "Projeler",
-      profile: "Profil",
-      contact: "İletişim",
-    },
-    en: {
-      almila: "almila",
-      skills: "Skills",
-      projects: "Projects",
-      profile: "Profile",
-      contact: "Contact",
-    },
-  };
-
-  const { almila, skills, projects, profile, contact } = content[language];
+const Header = () => {
+  const { language, toggleLanguage } = useContext(LanguageContext);
 
   return (
-    <header
-      className={`flex flex-row sticky top-10 h-70 justify-between mx-auto  w-[960px]  ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
-      }`}
-    >
-      <h2>almila</h2>
-      <div className="flex flex-row h-8 bg-indigo-500 gap-x-12">
-        <a
-          onClick={toggleLanguage}
-          className="px-2 py-1 rounded bg-blue-500 text-white"
-        >
-          TÜRKÇE'YE GEÇ
-        </a>
-
+    <div className="container flex flex-row items-end bg-slate-700 justify-between mx-auto text-white w-[960px] h-[50px] top-[110px] right-[50%] gap-x-3  z-20 m-0">
+      <a
+        onClick={toggleLanguage}
+        className="px-3 py-1  hover:bg-white hover:text-indigo-700 transition-colors"
+      >
+        TURKCE'YE GEC
+      </a>
+      <div className="items-center">
         <button
-          onClick={toggleTheme}
-          className="px-2 py-1 rounded bg-gray-300 text-gray-800"
+          // onClick={toggleLanguage}
+          className="px-3 py-1 border border-white rounded hover:bg-white hover:text-indigo-700 transition-colors"
         >
-          {isDarkMode ? "☀️" : "🌙"}
+          {/* {language === "en" ? "TR" : "EN"} */}
         </button>
-        <p>DARK MODE</p>
+        <span>DARK MODE</span>
       </div>
-    </header>
+    </div>
   );
-}
+};
 
 export default Header;
