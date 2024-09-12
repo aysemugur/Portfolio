@@ -42,9 +42,9 @@ const Profile = () => {
   };
 
   return (
-    <section className="profile bg-indigo-700 flex flex-col  py-16 text-white">
+    <section className="profile bg-indigo-700 flex flex-col  py-24  text-white">
       <div className="container  mx-auto w-[960px]">
-        <h2 className="text-4xl font-bold text-lime-300 tracking-wide mb-8">
+        <h2 className="text-5xl font-bold text-lime-300 tracking-wide mb-8">
           Profile
         </h2>
         <div className="grid grid-flow-row grid-cols-3 items-stretch gap-8 pt-0">

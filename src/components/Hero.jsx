@@ -37,13 +37,13 @@ const Hero = () => {
           <p className="text-zinc-200 text-2xl font-light mb-2 tracking-wider">
             {content[language].description}
           </p>
-          <div className="btn-bar text-indigo-700 text-xl flex gap-x-2 mt-6 font-normal tracking-wide ">
-            <button className="w-[27%] py-3 pl-0 pr-2 gap-x-2 bg-zinc-50 flex items-center justify-center rounded-lg">
+          <div className="btn-bar text-indigo-700 text-xl flex gap-x-3 mt-6 font-normal tracking-wide ">
+            <button className="w-[23%] py-3 pl-0 pr-2 gap-x-2 bg-zinc-50 flex items-center justify-center rounded-lg">
               <FaGithub className="w-[28px] h-[28px]" />
               <p>{content[language].github}</p>
             </button>
             <button
-              className="w-[27%] py-1 pl-0 pr-2 gap-x-2 bg-zinc-50 flex items-center justify-center rounded-lg
+              className="w-[25%] py-3 pl-0 pr-2 gap-x-2 bg-zinc-50 flex items-center justify-center rounded-lg
            "
             >
               <TfiLinkedin className="w-[28px] h-[28px]" />

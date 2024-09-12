@@ -35,16 +35,16 @@ const Skills = () => {
   };
 
   return (
-    <section className=" skills bg-white py-16">
+    <section className=" skills bg-white py-[90px]">
       <div className="container flex flex-row items-start justify-between mx-auto w-[960px]">
-        <h2 className="text-4xl font-bold tracking-wide text-indigo-700 mb-8 ">
+        <h2 className="text-5xl font-bold tracking-wide text-indigo-700 mb-8 ">
           {content[language].title}
         </h2>
-        <div className="grid grid-cols-2 gap-x-[62px] gap-y-8 mr-4">
+        <div className="grid grid-cols-2 gap-x-[205px] gap-y-8 ">
           {content[language].skills.map(({ name, Icon }, index) => (
             <div
               key={index}
-              className="flex flex-row items-center tracking-wide  "
+              className="flex flex-row items-center tracking-wide w-[245px]  "
             >
               <div className="flex w-42 h-42 bg-black rounded-md mr-6 p-4 items-center justify-center">
                 <Icon className="w-24 h-24 text-indigo-700  " />

@@ -48,7 +48,7 @@ const Projects = () => {
   return (
     <section className="projects bg-lime-300 py-16">
       <div className="flex flex-col gap-y-7  mx-auto mt-0 w-[960px]  ">
-        <h2 className="text-4xl font-bold text-indigo-700 mb-0 tracking-wide">
+        <h2 className="text-5xl font-bold text-indigo-700 mb-0 tracking-wide">
           {content[language].title}
         </h2>
         {content[language].projects.map((project, index) => (

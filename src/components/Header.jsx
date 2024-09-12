@@ -5,12 +5,6 @@ import ToggleSwitch from "./ToggleSwitch";
 const Header = () => {
   const { language, toggleLanguage } = useContext(LanguageContext);
 
-  {
-    /* <div className="container flex flex-row items-end bg-slate-700 justify-between mx-auto text-white w-[960px] h-[50px] top-[110px] right-[50%] gap-x-3  z-20 m-0"></div> */
-  }
-
-  // <div className="absolute top-0 right-0 flex justify-between items-center w-[40%] h-16 bg-lime-300 px-6">
-
   return (
     <div className="container flex flex-row bg-slate-400 justify-between mx-auto w-[960px] h-[72px]  z-120">
       <h1 className="text-2xl py-3 font-medium tracking-medium text-lime-300 ">
