@@ -52,9 +52,9 @@ const Hero = () => {
           </div>
         </div>
         <img
-          src="https://e0.pxfuel.com/wallpapers/221/418/desktop-wallpaper-woman-coding-on-computer-%C2%B7-stock-girl-programmer.jpg"
+          src="/src/assets/pictures/hero.png"
           alt="Profile"
-          className="w-[340px] h-full bg-blue-500 rounded-[18px] object-fit"
+          className="w-[350px] h-full bg-blue-500 rounded-[18px] object-fit"
         />
       </div>
     </div>
