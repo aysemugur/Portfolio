@@ -7,35 +7,20 @@ import Skills from "./components/Skills";
 import Profile from "./components/Profile";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import ToggleSwitch from "./components/ToggleSwitch";
-
-{
-  /* <div className="App relative">
-<Header />
-<div className="content">
-  <Hero />
-  <Skills />
-  <Profile />
-  <Projects />
-  <Contact />
-</div>
-</div> */
-}
 
 function App() {
   return (
-    <LanguageProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <LanguageProvider>
         <div className="content">
-          <Header />
           <Hero />
           <Skills />
           <Profile />
           <Projects />
           <Contact />
         </div>
-      </ThemeProvider>
-    </LanguageProvider>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

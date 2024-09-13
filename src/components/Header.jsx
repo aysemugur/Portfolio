@@ -1,25 +1,29 @@
-import React, { useContext } from "react";
-import { LanguageContext } from "../contexts/LanguageContext";
+import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useTheme } from "../contexts/ThemeContext";
 import ToggleSwitch from "./ToggleSwitch";
 
 const Header = () => {
-  const { language, toggleLanguage } = useContext(LanguageContext);
+  const { language, toggleLanguage } = useLanguage();
+  const { theme } = useTheme();
 
   return (
-    <div className="container flex flex-row bg-slate-400 justify-between mx-auto w-[960px] h-[72px]  z-120">
-      <h1 className="text-2xl py-3 font-medium tracking-medium text-lime-300 ">
-        ayşem
+    <div className="flex justify-between mt-4 items-top  w-full ">
+      <h1 className="text-2xl font-sm pt-4 tracking-medium text-lime-300">
+        almila
       </h1>
-      <div className="flex flex-rows text-top gap-x-9 ">
+      <div className="flex  space-x-12">
         <a
           onClick={toggleLanguage}
-          className=" text-lime-300 font-medium  tracking-wider text-md "
+          className="text-lime-300  font-md tracking-wider text-sm hover:text-lime-200 transition-colors"
         >
-          TÜRKÇE'YE GEÇ
+          {language === "tr" ? "TÜRKÇE'YE GEÇ" : "SWITCH TO ENGLISH"}
         </a>
-        <div className="flex flex-rows text-indigo-700  items-top gap-x-2">
+        <div className="flex items-top space-x-2">
           <ToggleSwitch />
-          <span className="font-medium tracking-wider text-md ">DARK MODE</span>
+          <span className="font-xl tracking-wider text-sm text-indigo-700">
+            {theme === "dark" ? "LIGHT MODE" : "DARK MODE"}
+          </span>
         </div>
       </div>
     </div>

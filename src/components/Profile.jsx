@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
-import { LanguageContext } from "../contexts/LanguageContext";
+import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Profile = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useLanguage();
+  const { theme } = useTheme();
 
   const content = {
     en: {
-      title: "Basic Information",
+      title: "Profile",
+      basicInfo: "Basic Information",
       info: {
         birthdate: "Birth date",
         city: "City",
@@ -16,97 +19,100 @@ const Profile = () => {
       answer: {
         birthdate: "24.03.1996",
         city: "Ankara",
-        education: "Hacettepe Unv. Biology Licence,2016",
-        role: "FrontEnd,UI",
+        education: "Hacettepe Unv. Biology Licence, 2016",
+        role: "Frontend, UI",
       },
       aboutMe: {
         title: "About Me",
-        description:
+        description: [
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        ],
       },
     },
     tr: {
-      title: "Kişisel Bilgiler",
+      title: "Profil",
+      basicInfo: "Kişisel Bilgiler",
       info: {
         birthdate: "Doğum Tarihi",
         city: "Şehir",
         education: "Eğitim",
         role: "Tercih Edilen Rol",
       },
+      answer: {
+        birthdate: "24.03.1996",
+        city: "Ankara",
+        education: "Hacettepe Ünv. Biyoloji Lisans, 2016",
+        role: "Frontend, UI",
+      },
       aboutMe: {
         title: "Hakkımda",
-        description:
+        description: [
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        ],
       },
     },
   };
 
-  return (
-    <section className="profile bg-indigo-700 flex flex-col  py-24  text-white">
-      <div className="container  mx-auto w-[960px]">
-        <h2 className="text-5xl font-bold text-lime-300 tracking-wide mb-8">
-          Profile
-        </h2>
-        <div className="grid grid-flow-row grid-cols-3 items-stretch gap-8 pt-0">
-          <div>
-            <h3 className="text-3xl font-normal mb-5 leading-none">
-              {content[language].title}
-            </h3>
+  const currentContent = content[language];
 
-            <table>
+  return (
+    <section
+      className={`profile py-16 ${
+        theme === "dark"
+          ? "bg-indigo-900 text-gray-200"
+          : "bg-indigo-700 text-white"
+      }`}
+    >
+      <div className="container mx-auto max-w-[960px] px-4">
+        <h2
+          className={`text-4xl md:text-5xl font-bold ${
+            theme === "dark" ? "text-lime-400" : "text-lime-300"
+          } tracking-wide mb-8`}
+        >
+          {currentContent.title}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-2xl md:text-3xl font-normal mb-5">
+              {currentContent.basicInfo}
+            </h3>
+            <table className="w-full">
               <tbody>
-                <tr className=" align-top h-[45px] ">
-                  <td className="text-lime-300 font-semibold p-0 leading-2 text-start">
-                    {content[language].info.birthdate}
-                  </td>
-                  <td className="font-light p-0  text-start">
-                    {content[language].answer.birthdate}
-                  </td>
-                </tr>
-                <tr className=" align-top h-[45px]">
-                  <td className="text-lime-300 font-semibold p-0 leading-2 text-start">
-                    {content[language].info.city}
-                  </td>
-                  <td className="font-light p-0  text-start">
-                    {content[language].answer.city}
-                  </td>
-                </tr>
-                <tr className="h-[70px] align-top ">
-                  <td className="text-lime-300 font-semibold p-0  text-start">
-                    {content[language].info.education}
-                  </td>
-                  <td className="font-light p-0  text-start">
-                    {content[language].answer.education}
-                  </td>
-                </tr>
-                <tr className="h-[45px] align-top ">
-                  <td className="text-lime-300 font-semibold p-0 leading-2 text-start">
-                    {content[language].info.role}
-                  </td>
-                  <td className="font-light p-0  text-start">
-                    {content[language].answer.role}
-                  </td>
-                </tr>
+                {Object.entries(currentContent.info).map(([key, value]) => (
+                  <tr key={key} className="align-top">
+                    <td
+                      className={`${
+                        theme === "dark" ? "text-lime-400" : "text-lime-300"
+                      } font-semibold pr-4 py-2`}
+                    >
+                      {value}
+                    </td>
+                    <td className="font-light py-2">
+                      {currentContent.answer[key]}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-          <div>
+          <div className="flex justify-center items-center">
             <img
               src="/src/assets/pictures/prof.png"
-              className="object-fit w-full h-full bg-lime-300 rounded-xl"
-            ></img>
+              alt="Profile"
+              className="object-cover w-full h-full max-w-[300px] max-h-[300px] rounded-xl"
+            />
           </div>
           <div>
-            <h3 className="text-3xl font-normal mb-4 leading-none">
-              {content[language].aboutMe.title}
+            <h3 className="text-2xl md:text-3xl font-normal mb-4">
+              {currentContent.aboutMe.title}
             </h3>
-            <p className="mb-4 text-lg font-light ">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat."
-            </p>
-            <p className="text-lg font-light">
-              {content[language].aboutMe.description}
-            </p>
+            {currentContent.aboutMe.description.map((paragraph, index) => (
+              <p key={index} className="mb-4 text-base md:text-lg font-light">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </div>

@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
-import { LanguageContext } from "../contexts/LanguageContext";
-import { TfiLinkedin } from "react-icons/tfi";
-import { FaGithub } from "react-icons/fa";
+import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useTheme } from "../contexts/ThemeContext";
+import Header from "./Header";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useLanguage();
+  const { theme } = useTheme();
 
   const content = {
     en: {
@@ -23,41 +25,52 @@ const Hero = () => {
     },
   };
 
+  const currentContent = content[language];
+
   return (
-    <div className="hero h-[670px] w-screen relative items-stretch pt-[135px] z-10">
-      <div className="hero-cont-design flex flex-row absolute h-full inset-0 z-10">
-        <div className="purple w-[71%] bg-indigo-700"></div>
-        <div className="green w-[29%] bg-lime-300"></div>
-      </div>
-      <div className="container flex flex-row items-end justify-between mx-auto w-[960px] h-[360px] gap-x-10 pr-0 relative z-20">
-        <div className="hero-left flex flex-col w-[550px] pt-18">
-          <h1 className="text-6xl text-lime-300 font-bold leading-[64px] mb-6 pr-35">
-            {content[language].title}
-          </h1>
-          <p className="text-zinc-200 text-2xl font-light mb-2 tracking-wider">
-            {content[language].description}
-          </p>
-          <div className="btn-bar text-indigo-700 text-xl flex gap-x-3 mt-6 font-normal tracking-wide ">
-            <button className="w-[23%] py-3 pl-0 pr-2 gap-x-2 bg-zinc-50 flex items-center justify-center rounded-lg">
-              <FaGithub className="w-[28px] h-[28px]" />
-              <p>{content[language].github}</p>
-            </button>
-            <button
-              className="w-[25%] py-3 pl-0 pr-2 gap-x-2 bg-zinc-50 flex items-center justify-center rounded-lg
-           "
-            >
-              <TfiLinkedin className="w-[28px] h-[28px]" />
-              <p>{content[language].linkedin}</p>
-            </button>
+    <section
+      className={` pb-16 pt-2 relative ${
+        theme === "dark" ? "bg-indigo-900" : "bg-indigo-700"
+      }`}
+    >
+      <div className="absolute top-0 right-0 w-[29.5%] h-full bg-lime-300" />
+      <div className="relative  z-10 container mx-auto max-w-[960px] pb-16">
+        <Header />
+        <div className="flex flex-row items-end  justify-between mt-10">
+          <div className="w-[50%] ">
+            <h2 className="text-3xl md:text-5xl font-bold text-lime-300 mb-9">
+              {currentContent.title}
+            </h2>
+            <p className="text-xl font-light text-white mb-7 ">
+              {currentContent.description}
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="#"
+                className="flex items-center bg-white text-indigo-700 px-4 py-2 rounded-md"
+              >
+                <FaGithub className="mr-2" />
+                {currentContent.github}
+              </a>
+              <a
+                href="#"
+                className="flex items-center bg-white text-indigo-700 px-4 py-2 rounded-md"
+              >
+                <FaLinkedin className="mr-2" />
+                {currentContent.linkedin}
+              </a>
+            </div>
+          </div>
+          <div className="w-[37.5%] flex items-end justify-center">
+            <img
+              src="/src/assets/pictures/hero.png"
+              alt="Frontend Developer"
+              className="rounded-2xl shadow-lg w-[360px] max-h-[375px] object-cover"
+            />
           </div>
         </div>
-        <img
-          src="/src/assets/pictures/hero.png"
-          alt="Profile"
-          className="w-[350px] h-full bg-blue-500 rounded-[18px] object-fit"
-        />
       </div>
-    </div>
+    </section>
   );
 };
 
