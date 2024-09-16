@@ -61,7 +61,7 @@ const Profile = () => {
     <section
       className={`profile py-16 ${
         theme === "dark"
-          ? "bg-indigo-900 text-gray-200"
+          ? "bg-[#171043] text-gray-200"
           : "bg-indigo-700 text-white"
       }`}
     >

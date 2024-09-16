@@ -39,22 +39,22 @@ const Skills = () => {
   return (
     <section
       className={` skills py-[70px] ${
-        theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
+        theme === "dark" ? "bg-[#252128] text-white" : "bg-white text-black"
       }`}
     >
-      <div className="container flex flex-row  justify-between mx-auto max-w-[960px]">
+      <div className="container flex flex-row  justify-between mx-auto  max-w-[960px]">
         <h2
-          className={`text-5xl font-bold tracking-wide mb-8 ${
-            theme === "dark" ? "text-indigo-400" : "text-indigo-700"
+          className={`text-5xl font-bold tracking-wide mb-8  ${
+            theme === "dark" ? "text-lime-300" : "text-indigo-700"
           }`}
         >
           {content[language].title}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 gap-x-[130px]">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 gap-8 gap-x-32">
           {content[language].skills.map(({ name, Icon }, index) => (
-            <div key={index} className="flex items-center mr-1">
+            <div key={index} className="flex items-center ">
               <div
-                className={`flex w-[100px] h-[100px] rounded-md mr-6 p-3 items-center justify-center ${
+                className={`flex w-[100px] h-[100px] rounded-md mr-3 p-2 items-center justify-center ${
                   theme === "dark" ? "bg-gray-800" : "bg-gray-200 "
                 }`}
               >

@@ -30,10 +30,14 @@ const Hero = () => {
   return (
     <section
       className={` pb-16 pt-2 relative ${
-        theme === "dark" ? "bg-indigo-900" : "bg-indigo-700"
+        theme === "dark" ? "bg-[#171043]" : "bg-indigo-700"
       }`}
     >
-      <div className="absolute top-0 right-0 w-[29.5%] h-full bg-lime-300" />
+      <div
+        className={`absolute top-0 right-0 w-[28.5%] h-full bg-lime-300 ${
+          theme === "dark" ? "bg-[#1b220b]" : "bg-lime-300"
+        }`}
+      />
       <div className="relative  z-10 container mx-auto max-w-[960px] pb-16">
         <Header />
         <div className="flex flex-row items-end  justify-between mt-10">
@@ -47,14 +51,24 @@ const Hero = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="flex items-center bg-white text-indigo-700 px-4 py-2 rounded-md"
+                className={`flex items-center  px-4 py-2 rounded-md
+                ${
+                  theme === "dark"
+                    ? " bg-[#252128] text-white border-white border-2 "
+                    : "bg-white text-indigo-700 "
+                }`}
               >
                 <FaGithub className="mr-2" />
                 {currentContent.github}
               </a>
               <a
                 href="#"
-                className="flex items-center bg-white text-indigo-700 px-4 py-2 rounded-md"
+                className={`flex items-center  px-4 py-2 rounded-md
+                ${
+                  theme === "dark"
+                    ? " bg-[#252128] text-white border-white border-2 "
+                    : "bg-white text-indigo-700 "
+                }`}
               >
                 <FaLinkedin className="mr-2" />
                 {currentContent.linkedin}

@@ -54,7 +54,7 @@ const Projects = () => {
   return (
     <section
       className={`projects py-16 ${
-        theme === "dark" ? "bg-lime-800" : "bg-lime-300"
+        theme === "dark" ? "bg-[#1a210a]" : "bg-lime-300"
       }`}
     >
       <div className="container mx-auto max-w-[960px] px-4">
@@ -99,7 +99,7 @@ const Projects = () => {
                       key={tagIndex}
                       className={`${
                         theme === "dark"
-                          ? "bg-indigo-600 text-white"
+                          ? "bg-[#8173da] text-white"
                           : "bg-indigo-700 text-zinc-50"
                       } text-sm rounded-full px-3 py-1 mr-2 mb-0`}
                     >
@@ -110,7 +110,7 @@ const Projects = () => {
               </div>
               <div
                 className={`${
-                  theme === "dark" ? "text-indigo-300" : "text-black"
+                  theme === "dark" ? " text-[#cbf281]" : "text-black"
                 }`}
               >
                 {currentContent.links.map((link, linkIndex) => (
@@ -118,7 +118,7 @@ const Projects = () => {
                     key={linkIndex}
                     href="#"
                     className={`text-base mr-6 underline underline-offset-4 hover:${
-                      theme === "dark" ? "text-indigo-400" : "text-indigo-700"
+                      theme === "dark" ? "text-indigo-300" : "text-indigo-700"
                     }`}
                   >
                     {link}

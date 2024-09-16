@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <section
       className={`contact py-16 ${
-        theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+        theme === "dark" ? "bg-[#252128]" : "bg-white text-gray-900"
       }`}
     >
       <div className="container mx-auto max-w-[960px] px-[300px]">
