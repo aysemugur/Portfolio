@@ -33,14 +33,16 @@ const Projects = () => {
       projects: [
         {
           title: "Workintech",
-          description: "Workintech projesinin kısa açıklaması...",
-          tags: ["React", "Node.js", "MongoDB"],
+          description:
+            "Kullanıcılarınızın hangi çerezleri kabul edeceğini veya reddedeceğini seçmesine olanak tanıyan basit, özelleştirilebilir, minimum kurulum çerez eklentisi. Bu, Vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve bir NPM paketi olarak mevcuttur ve git deposu her türlü özelleştirmeyi yapar kodlama ve temalar mümkün.",
+          tags: ["react", "redux", "vercel"],
           image: "pro.png",
         },
         {
           title: "Journey",
-          description: "Journey projesinin kısa açıklaması...",
-          tags: ["Vue.js", "Express", "PostgreSQL"],
+          description:
+            "Kullanıcılarınızın hangi çerezleri kabul edeceğini veya reddedeceğini seçmesine olanak tanıyan basit, özelleştirilebilir, minimum kurulum çerez eklentisi. Bu, Vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve bir NPM paketi olarak mevcuttur ve git deposu her türlü özelleştirmeyi yapar kodlama ve temalar mümkün.",
+          tags: ["react", "redux", "vercel"],
           image: "pro2.png",
         },
       ],
@@ -75,7 +77,7 @@ const Projects = () => {
               alt={project.title}
               className="w-full md:w-[360px] h-[360px] object-cover"
             />
-            <div className="p-6 md:p-8 flex flex-col justify-between">
+            <div className=" md:p-8 flex flex-col justify-between">
               <div>
                 <h3
                   className={`text-3xl md:text-4xl font-semibold mb-4 ${
@@ -91,7 +93,7 @@ const Projects = () => {
                 >
                   {project.description}
                 </p>
-                <div className="mb-6 flex flex-wrap">
+                <div className=" flex flex-wrap">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
@@ -99,7 +101,7 @@ const Projects = () => {
                         theme === "dark"
                           ? "bg-indigo-600 text-white"
                           : "bg-indigo-700 text-zinc-50"
-                      } text-sm rounded-full px-3 py-1 mr-2 mb-2`}
+                      } text-sm rounded-full px-3 py-1 mr-2 mb-0`}
                     >
                       {tag}
                     </span>

@@ -15,23 +15,23 @@ const Skills = () => {
     en: {
       title: "Skills",
       skills: [
-        { name: "JavaScript", Icon: DiJavascript1 },
-        { name: "Node.js", Icon: FaNode },
-        { name: "React", Icon: DiReact },
-        { name: "VS Code", Icon: VscVscode },
-        { name: "Redux", Icon: TbBrandRedux },
-        { name: "Figma", Icon: PiFigmaLogoFill },
+        { name: "JAVASCRIPT", Icon: DiJavascript1 },
+        { name: "NODE", Icon: FaNode },
+        { name: "REACT", Icon: DiReact },
+        { name: "VS CODE", Icon: VscVscode },
+        { name: "REDUX", Icon: TbBrandRedux },
+        { name: "FIGMA", Icon: PiFigmaLogoFill },
       ],
     },
     tr: {
       title: "Yetenekler",
       skills: [
-        { name: "JavaScript", Icon: DiJavascript1 },
-        { name: "Node.js", Icon: FaNode },
-        { name: "React", Icon: DiReact },
-        { name: "VS Code", Icon: VscVscode },
-        { name: "Redux", Icon: TbBrandRedux },
-        { name: "Figma", Icon: PiFigmaLogoFill },
+        { name: "JAVASCRIPT", Icon: DiJavascript1 },
+        { name: "NODE", Icon: FaNode },
+        { name: "REACT", Icon: DiReact },
+        { name: "VS CODE", Icon: VscVscode },
+        { name: "REDUX", Icon: TbBrandRedux },
+        { name: "FIGMA", Icon: PiFigmaLogoFill },
       ],
     },
   };
@@ -50,16 +50,16 @@ const Skills = () => {
         >
           {content[language].title}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 gap-x-[130px]">
           {content[language].skills.map(({ name, Icon }, index) => (
-            <div key={index} className="flex items-center">
+            <div key={index} className="flex items-center mr-1">
               <div
-                className={`flex w-16 h-16 rounded-md mr-6 p-3 items-center justify-center ${
-                  theme === "dark" ? "bg-gray-800" : "bg-gray-200"
+                className={`flex w-[100px] h-[100px] rounded-md mr-6 p-3 items-center justify-center ${
+                  theme === "dark" ? "bg-gray-800" : "bg-gray-200 "
                 }`}
               >
                 <Icon
-                  className={`w-10 h-10 ${
+                  className={`w-40 h-40 ${
                     theme === "dark" ? "text-indigo-400" : "text-indigo-700"
                   }`}
                   aria-hidden="true"
