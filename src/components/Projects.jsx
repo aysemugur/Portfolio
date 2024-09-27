@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 
@@ -53,7 +52,7 @@ const Projects = () => {
 
   return (
     <section
-      className={`projects py-16 ${
+      className={`projects py-16 pb-12 ${
         theme === "dark" ? "bg-[#1a210a]" : "bg-lime-300"
       }`}
     >
@@ -77,7 +76,7 @@ const Projects = () => {
               alt={project.title}
               className="w-full md:w-[360px] h-[360px] object-cover"
             />
-            <div className=" md:p-8 flex flex-col justify-between">
+            <div className=" md:p-8 flex flex-col ">
               <div>
                 <h3
                   className={`text-3xl md:text-4xl font-semibold mb-4 ${

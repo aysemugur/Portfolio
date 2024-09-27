@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 import Header from "./Header";
@@ -28,63 +27,56 @@ const Hero = () => {
   const currentContent = content[language];
 
   return (
-    <section
-      className={` pb-16 pt-2 relative ${
+    <div
+      className={`min-h-screen ${
         theme === "dark" ? "bg-[#171043]" : "bg-indigo-700"
-      }`}
+      } relative overflow-hidden`}
     >
+      {/* Sağ taraftaki arka plan */}
       <div
-        className={`absolute top-0 right-0 w-[28.5%] h-full bg-lime-300 ${
+        className={`absolute top-0 right-0 w-1/2 h-full ${
           theme === "dark" ? "bg-[#1b220b]" : "bg-lime-300"
         }`}
       />
-      <div className="relative  z-10 container mx-auto max-w-[960px] pb-16">
+
+      {/* Ana içerik */}
+      <div className="relative z-10 container mx-auto max-w-[960px] py-16 flex flex-col min-h-screen">
         <Header />
-        <div className="flex flex-row items-end  justify-between mt-10">
-          <div className="w-[50%] ">
-            <h2 className="text-3xl md:text-5xl font-bold text-lime-300 mb-9">
+        <div className="flex-grow flex items-center">
+          <div className="w-full lg:w-3/5">
+            <h1 className="text-lime-300 text-4xl lg:text-5xl font-bold mb-6">
               {currentContent.title}
-            </h2>
-            <p className="text-xl font-light text-white mb-7 ">
+            </h1>
+            <p className="text-white text-xl mb-8">
               {currentContent.description}
             </p>
-            <div className="flex space-x-4">
+            <div className="space-y-4">
               <a
                 href="#"
-                className={`flex items-center  px-4 py-2 rounded-md
-                ${
-                  theme === "dark"
-                    ? " bg-[#252128] text-white border-white border-2 "
-                    : "bg-white text-indigo-700 "
-                }`}
+                className="flex items-center space-x-2 text-white hover:text-lime-300"
               >
-                <FaGithub className="mr-2" />
-                {currentContent.github}
+                <FaGithub size={24} />
+                <span>{currentContent.github}</span>
               </a>
               <a
                 href="#"
-                className={`flex items-center  px-4 py-2 rounded-md
-                ${
-                  theme === "dark"
-                    ? " bg-[#252128] text-white border-white border-2 "
-                    : "bg-white text-indigo-700 "
-                }`}
+                className="flex items-center space-x-2 text-white hover:text-lime-300"
               >
-                <FaLinkedin className="mr-2" />
-                {currentContent.linkedin}
+                <FaLinkedin size={24} />
+                <span>{currentContent.linkedin}</span>
               </a>
             </div>
           </div>
-          <div className="w-[37.5%] flex items-end justify-center">
+          <div className=" lg:block w-2/5">
             <img
               src="/src/assets/pictures/hero.png"
               alt="Frontend Developer"
-              className="rounded-2xl shadow-lg w-[360px] max-h-[375px] object-cover"
+              className="w-full h-full rounded-lg"
             />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 
@@ -17,9 +16,9 @@ const Profile = () => {
         role: "Preferred Role",
       },
       answer: {
-        birthdate: "24.03.1996",
+        birthdate: "04.06.1993",
         city: "Ankara",
-        education: "Hacettepe Unv. Biology Licence, 2016",
+        education: "Ankara Unv. Chemical Engineer, 2016",
         role: "Frontend, UI",
       },
       aboutMe: {
@@ -42,8 +41,8 @@ const Profile = () => {
       answer: {
         birthdate: "24.03.1996",
         city: "Ankara",
-        education: "Hacettepe Ünv. Biyoloji Lisans, 2016",
-        role: "Frontend, UI",
+        education: "Ankara Ünv. Kimya Mühendisi, 2016",
+        role: "Ön Uç Web Geliştirici,Kullanıcı Arayüz Tasarımcı",
       },
       aboutMe: {
         title: "Hakkımda",
@@ -59,7 +58,7 @@ const Profile = () => {
 
   return (
     <section
-      className={`profile py-16 ${
+      className={`profile py-20 ${
         theme === "dark"
           ? "bg-[#171043] text-gray-200"
           : "bg-indigo-700 text-white"

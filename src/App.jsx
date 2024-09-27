@@ -1,4 +1,3 @@
-import React from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Hero from "./components/Hero";
@@ -8,18 +7,26 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 function App() {
+  const containerStyle = {
+    minWidth: "1440px",
+    maxWidth: "1920px",
+    margin: "0",
+    padding: "0",
+  };
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <div className="content">
-          <Hero />
-          <Skills />
-          <Profile />
-          <Projects />
-          <Contact />
-        </div>
-      </LanguageProvider>
-    </ThemeProvider>
+    <div style={containerStyle}>
+      <ThemeProvider>
+        <LanguageProvider>
+          <div className="content">
+            <Hero />
+            <Skills />
+            <Profile />
+            <Projects />
+            <Contact />
+          </div>
+        </LanguageProvider>
+      </ThemeProvider>
+    </div>
   );
 }
 

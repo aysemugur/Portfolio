@@ -32,7 +32,7 @@ const Contact = () => {
     tr: {
       title: "Bana mesaj gönderin!",
       description:
-        "Bir sorunuz veya öneriniz mi var, ya da sadece merhaba mı demek istiyorsunuz? Buyurun.",
+        "Bir sorunuz veya öneriniz mi var, ya da sadece merhaba mı demek istiyorsunuz? Devam edin.",
       email: "aysemugr@gmail.com",
       socialMedia: [
         { name: "Twitter", Icon: LuTwitter },

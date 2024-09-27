@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 import ToggleSwitch from "./ToggleSwitch";
@@ -8,22 +7,24 @@ const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="flex justify-between mt-4 items-top  w-full ">
-      <h1 className="text-4xl font-semibold pt-4 tracking-medium text-lime-300">
-        ayşem
-      </h1>
-      <div className="flex  space-x-12">
-        <a
+    <div className="flex justify-between items-center mb-16">
+      <h2 className="text-lime-300 text-3xl font-bold">almila</h2>
+      <div className="flex items-center space-x-6">
+        <button
           onClick={toggleLanguage}
-          className="text-lime-300  font-bold tracking-wider text-sm hover:text-lime-200 transition-colors"
+          className="text-lime-300 hover:text-lime-200 transition-colors text-sm font-bold"
         >
-          {language === "tr" ? "TÜRKÇE'YE GEÇ" : "SWITCH TO ENGLISH"}
-        </a>
-        <div className="flex items-top space-x-2">
-          <ToggleSwitch />
-          <span className="font-bold tracking-wider text-sm text-indigo-700">
-            {theme === "dark" ? "LIGHT MODE" : "DARK MODE"}
+          {language === "en" ? "TÜRKÇE'YE GEÇ" : "SWITCH TO ENGLISH"}
+        </button>
+        <div className="flex items-center space-x-2">
+          <span
+            className={`text-sm font-bold ${
+              theme === "dark" ? "text-white" : "text-indigo-700"
+            }`}
+          >
+            {theme === "dark" ? "DARK MODE" : "LIGHT MODE"}
           </span>
+          <ToggleSwitch />
         </div>
       </div>
     </div>
