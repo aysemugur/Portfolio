@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 import { DiJavascript1, DiReact } from "react-icons/di";
@@ -42,7 +41,7 @@ const Skills = () => {
         theme === "dark" ? "bg-[#252128] text-white" : "bg-white text-black"
       }`}
     >
-      <div className="container flex flex-row  justify-between mx-auto  max-w-[960px]">
+      <div className="container flex flex-row justify-between mx-auto  max-w-[960px]">
         <h2
           className={`text-5xl font-bold tracking-wide mb-8  ${
             theme === "dark" ? "text-lime-300" : "text-indigo-700"
@@ -50,7 +49,7 @@ const Skills = () => {
         >
           {content[language].title}
         </h2>
-        <div className=" grid grid-cols-1 sm:grid-cols-2 gap-8 gap-x-32">
+        <div className=" grid gap-8 gap-x-32 max-[768px]:grid-cols-2 sm:grid-cols-2 ">
           {content[language].skills.map(({ name, Icon }, index) => (
             <div key={index} className="flex items-center ">
               <div

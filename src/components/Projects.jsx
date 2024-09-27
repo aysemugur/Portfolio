@@ -67,7 +67,7 @@ const Projects = () => {
         {currentContent.projects.map((project, index) => (
           <div
             key={index}
-            className={`flex flex-col md:flex-row ${
+            className={`flex min-[425px]:flex-rows ${
               theme === "dark" ? "bg-gray-800" : "bg-white"
             } shadow-lg rounded-xl overflow-hidden mb-8`}
           >
@@ -76,7 +76,7 @@ const Projects = () => {
               alt={project.title}
               className="w-full md:w-[360px] h-[360px] object-cover"
             />
-            <div className=" md:p-8 flex flex-col ">
+            <div className=" min-[425px]:p-8 flex flex-col ">
               <div>
                 <h3
                   className={`text-3xl md:text-4xl font-semibold mb-4 ${
@@ -86,9 +86,9 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 <p
-                  className={`${
+                  className={` ${
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  } text-base mb-6`}
+                  } text-base mb-6 leading-tight`}
                 >
                   {project.description}
                 </p>
@@ -100,7 +100,7 @@ const Projects = () => {
                         theme === "dark"
                           ? "bg-[#8173da] text-white"
                           : "bg-indigo-700 text-zinc-50"
-                      } text-sm rounded-full px-3 py-1 mr-2 mb-0`}
+                      } text-sm rounded-full px-3 py-1 mr-2 mb-5`}
                     >
                       {tag}
                     </span>

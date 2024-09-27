@@ -28,42 +28,40 @@ const Hero = () => {
 
   return (
     <div
-      className={`min-h-screen ${
+      className={` ${
         theme === "dark" ? "bg-[#171043]" : "bg-indigo-700"
       } relative overflow-hidden`}
     >
-      {/* Sağ taraftaki arka plan */}
       <div
-        className={`absolute top-0 right-0 w-1/2 h-full ${
+        className={`absolute top-0 right-0 w-2/4 h-full ${
           theme === "dark" ? "bg-[#1b220b]" : "bg-lime-300"
         }`}
       />
 
-      {/* Ana içerik */}
-      <div className="relative z-10 container mx-auto max-w-[960px] py-16 flex flex-col min-h-screen">
+      <div className="relative z-10 container mx-auto max-w-[960px] pb-16 pt-2 flex flex-col ">
         <Header />
-        <div className="flex-grow flex items-center">
-          <div className="w-full lg:w-3/5">
-            <h1 className="text-lime-300 text-4xl lg:text-5xl font-bold mb-6">
+        <div className="flex items-center">
+          <div className="w-full pr-15 lg:w-3/5 max-[768px]:pr-[300px] sm:pr-[210px]">
+            <h1 className="text-lime-300 text-3xl md:text-4xl lg:text-5xl font-bold">
               {currentContent.title}
             </h1>
-            <p className="text-white text-xl mb-8">
+            <p className="text-white text-lg md:text-xl mb-6 md:mb-8 mt-4 md:mt-6 mr-4 md:mr-6">
               {currentContent.description}
             </p>
-            <div className="space-y-4">
+            <div className="flex flex-row gap-x-2 ">
               <a
                 href="#"
-                className="flex items-center space-x-2 text-white hover:text-lime-300"
-              >
-                <FaGithub size={24} />
-                <span>{currentContent.github}</span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center space-x-2 text-white hover:text-lime-300"
+                className="flex flex-row items-center space-x-2 text-indigo-700 hover:text-lime-300 bg-white rounded-md p-2 "
               >
                 <FaLinkedin size={24} />
                 <span>{currentContent.linkedin}</span>
+              </a>
+              <a
+                href="#"
+                className="flex items-center space-x-2 text-indigo-700 hover:text-lime-300 bg-white rounded-md p-2 "
+              >
+                <FaGithub size={24} />
+                <span>{currentContent.github}</span>
               </a>
             </div>
           </div>

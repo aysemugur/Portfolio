@@ -1,4 +1,3 @@
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 import { LuTwitter } from "react-icons/lu";
@@ -67,7 +66,7 @@ const Contact = () => {
             {currentContent.title}
           </h2>
           <p
-            className={`text-lg tracking-wide font-light leading-7 mb-6 ${
+            className={`text-lg tracking-normal font-light leading-6 mb-3 ${
               theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}
           >
@@ -82,7 +81,7 @@ const Contact = () => {
           >
             {currentContent.email}
           </a>
-          <div className="flex justify-center mt-8 space-x-6">
+          <div className="flex justify-center mt-5 space-x-6">
             {currentContent.socialMedia.map(({ name, Icon, url }, index) => (
               <a
                 key={index}
