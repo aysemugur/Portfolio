@@ -8,8 +8,8 @@ import Contact from "./components/Contact";
 
 function App() {
   const containerStyle = {
-    minWidth: "1440px",
-    maxWidth: "1920px",
+    minWidth: "960px",
+    maxWidth: "2560px",
     margin: "0",
     padding: "0",
   };

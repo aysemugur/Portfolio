@@ -58,7 +58,7 @@ const Profile = () => {
 
   return (
     <section
-      className={`profile py-20 ${
+      className={`profile py-8 pb-9 ${
         theme === "dark"
           ? "bg-[#171043] text-gray-200"
           : "bg-indigo-700 text-white"
@@ -66,7 +66,7 @@ const Profile = () => {
     >
       <div className="container mx-auto max-w-[960px] px-4">
         <h2
-          className={`text-4xl md:text-5xl font-bold ${
+          className={`text-4xl md:text-4xl font-bold ${
             theme === "dark" ? "text-lime-400" : "text-lime-300"
           } tracking-wide mb-8`}
         >

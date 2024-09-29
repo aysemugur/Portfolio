@@ -52,7 +52,7 @@ const Contact = () => {
 
   return (
     <section
-      className={`contact py-16 ${
+      className={`contact py-8 ${
         theme === "dark" ? "bg-[#252128]" : "bg-white text-gray-900"
       }`}
     >

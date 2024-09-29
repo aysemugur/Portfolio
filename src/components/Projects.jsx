@@ -15,14 +15,16 @@ const Projects = () => {
           description:
             "A simple, customizable, minimum setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
           tags: ["react", "redux", "vercel"],
-          image: "pro.png",
+          image:
+            "https://images.unsplash.com/photo-1690264695884-f62022341c8f?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
           title: "Journey",
           description:
             "A simple, customizable, minimum setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
           tags: ["react", "redux", "vercel"],
-          image: "pro2.png",
+          image:
+            "https://images.unsplash.com/photo-1523053155959-8de8d942050c?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
       ],
     },
@@ -35,14 +37,16 @@ const Projects = () => {
           description:
             "Kullanıcılarınızın hangi çerezleri kabul edeceğini veya reddedeceğini seçmesine olanak tanıyan basit, özelleştirilebilir, minimum kurulum çerez eklentisi. Bu, Vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve bir NPM paketi olarak mevcuttur ve git deposu her türlü özelleştirmeyi yapar kodlama ve temalar mümkün.",
           tags: ["react", "redux", "vercel"],
-          image: "pro.png",
+          image:
+            "https://images.unsplash.com/photo-1690264695884-f62022341c8f?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
           title: "Journey",
           description:
             "Kullanıcılarınızın hangi çerezleri kabul edeceğini veya reddedeceğini seçmesine olanak tanıyan basit, özelleştirilebilir, minimum kurulum çerez eklentisi. Bu, Vanilla JS, SCSS ve Parcel Bundler ile oluşturulmuştur ve bir NPM paketi olarak mevcuttur ve git deposu her türlü özelleştirmeyi yapar kodlama ve temalar mümkün.",
           tags: ["react", "redux", "vercel"],
-          image: "pro2.png",
+          image:
+            "https://images.unsplash.com/photo-1523053155959-8de8d942050c?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
       ],
     },
@@ -52,13 +56,13 @@ const Projects = () => {
 
   return (
     <section
-      className={`projects py-16 pb-12 ${
+      className={`projects pt-6 pb-2 ${
         theme === "dark" ? "bg-[#1a210a]" : "bg-lime-300"
       }`}
     >
-      <div className="container mx-auto max-w-[960px] px-4">
+      <div className="container mx-auto max-w-[960px]  px-4">
         <h2
-          className={`text-4xl md:text-5xl font-bold ${
+          className={`text-4xl md:text-4xl font-bold ${
             theme === "dark" ? "text-lime-300" : "text-indigo-700"
           } tracking-wide mb-8`}
         >
@@ -67,16 +71,20 @@ const Projects = () => {
         {currentContent.projects.map((project, index) => (
           <div
             key={index}
-            className={`flex min-[425px]:flex-rows ${
+            className={`flex h-[320px] min-[425px]:flex-rows ${
               theme === "dark" ? "bg-gray-800" : "bg-white"
             } shadow-lg rounded-xl overflow-hidden mb-8`}
           >
             <img
-              src={`/src/assets/pictures/${project.image}`}
+              src={
+                project.image.startsWith("http")
+                  ? project.image
+                  : `/images/${project.image}`
+              }
               alt={project.title}
-              className="w-full md:w-[360px] h-[360px] object-cover"
+              className="w-full h-[320px] object-cover  rounded-l  sm:h-80 md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[320px]"
             />
-            <div className=" min-[425px]:p-8 flex flex-col ">
+            <div className=" min-[425px]:p-7 flex flex-col ">
               <div>
                 <h3
                   className={`text-3xl md:text-4xl font-semibold mb-4 ${

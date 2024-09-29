@@ -37,35 +37,35 @@ const Skills = () => {
 
   return (
     <section
-      className={` skills py-[70px] ${
+      className={` skills py-[32px] ${
         theme === "dark" ? "bg-[#252128] text-white" : "bg-white text-black"
       }`}
     >
       <div className="container flex flex-row justify-between mx-auto  max-w-[960px]">
         <h2
-          className={`text-5xl font-bold tracking-wide mb-8  ${
+          className={`text-4xl font-bold tracking-wide mb-8  ${
             theme === "dark" ? "text-lime-300" : "text-indigo-700"
           }`}
         >
           {content[language].title}
         </h2>
-        <div className=" grid gap-8 gap-x-32 max-[768px]:grid-cols-2 sm:grid-cols-2 ">
+        <div className=" grid gap-3 gap-x-32 max-[768px]:grid-cols-2 sm:grid-cols-2 ">
           {content[language].skills.map(({ name, Icon }, index) => (
             <div key={index} className="flex items-center ">
               <div
-                className={`flex w-[100px] h-[100px] rounded-md mr-3 p-2 items-center justify-center ${
+                className={`flex w-[100px] h-[100px] rounded-md mr-3 p-5 items-center justify-center ${
                   theme === "dark" ? "bg-gray-800" : "bg-gray-200 "
                 }`}
               >
                 <Icon
-                  className={`w-40 h-40 ${
+                  className={`w-60 h-60 ${
                     theme === "dark" ? "text-indigo-400" : "text-indigo-700"
                   }`}
                   aria-hidden="true"
                 />
               </div>
               <span
-                className={`text-xl font-normal ${
+                className={`text-medium font-normal ${
                   theme === "dark" ? "text-gray-300" : "text-gray-600"
                 }`}
               >
