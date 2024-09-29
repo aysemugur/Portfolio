@@ -98,7 +98,7 @@ const Profile = () => {
           </div>
           <div className="flex justify-center items-center">
             <img
-              src="/src/assets/pictures/prof.png"
+              src="https://plus.unsplash.com/premium_photo-1723924901202-b077728b513f?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Profile"
               className="object-cover w-full h-full max-w-[300px] max-h-[300px] rounded-xl"
             />
